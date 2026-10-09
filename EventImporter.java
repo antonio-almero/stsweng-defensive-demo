@@ -27,8 +27,8 @@ public class EventImporter {
         
             System.out.printf("\nCurrent record: %s\n", line);
 
-            if (values.length < 3) {
-                System.out.println("Incomplete values. Skipping record...");
+            if (values.length != 3) {
+                System.out.println("Less or more than 3 values read. Skipping record...");
                 rejectedCount++;
                 continue;
             }
