@@ -24,6 +24,8 @@ public class EventImporter {
         for (String line : lines) {
 
             String[] values = line.split(",");
+        
+            System.out.printf("\nCurrent record: %s\n", line);
 
             if (values.length < 3) {
                 System.out.println("Incomplete values. Skipping record...");
@@ -60,10 +62,12 @@ public class EventImporter {
             events.add(
                     new Event(date, title, color)
             );
+
+            System.out.print("Record successfully imported.\n");
             importedCount++;
         }
 
-        System.out.printf("Succesfully imported %d records, rejected %d records.\n", importedCount, rejectedCount);
+        System.out.printf("\nSuccesfully imported %d records, rejected %d records.\n\n", importedCount, rejectedCount);
 
         return events;
     }
